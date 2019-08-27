@@ -1,6 +1,7 @@
 {
-  "extends": "%SET_DURING_SB_INIT%",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
     "types": ["node"]
   },
   "exclude": ["../src/test.ts", "../src/**/*.spec.ts", "../projects/**/*.spec.ts"],
