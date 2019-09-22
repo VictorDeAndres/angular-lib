@@ -10,7 +10,7 @@ storiesOf('Ng-library/Charts/Progress-Bar', module)
   )
   .add('default', () => {
     return {
-      template: `<ngl-radial-progress></ngl-radial-progress>`,
+      template: `<ngl-radial-progress [graphData]="{foo: 'bar'}"></ngl-radial-progress>`,
       props: {},
     };
   });

@@ -1,8 +1,18 @@
 {
   "name": "radial-progress",
+  "scripts": {
+    "test": "./../../node_modules/jest/bin/jest.js"
+  },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.3",
     "@angular/core": "^8.2.3"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "./../../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": ["ts", "tsx", "js"]
   }
 }
