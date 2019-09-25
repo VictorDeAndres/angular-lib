@@ -1,0 +1,21 @@
+{
+  "name": "common-library",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.3",
+    "@angular/core": "^8.2.3"
+  },
+  "main": "bundles/common-library.umd.js",
+  "module": "fesm5/common-library.js",
+  "es2015": "fesm2015/common-library.js",
+  "esm5": "esm5/common-library.js",
+  "esm2015": "esm2015/common-library.js",
+  "fesm5": "fesm5/common-library.js",
+  "fesm2015": "fesm2015/common-library.js",
+  "typings": "common-library.d.ts",
+  "metadata": "common-library.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

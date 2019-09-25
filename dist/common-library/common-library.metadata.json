@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":4,"metadata":{"D3Container":{"__symbolic":"class","members":{"__ctor__":[{"__symbolic":"constructor","parameters":[{"__symbolic":"reference","module":"@angular/core","name":"ElementRef","line":12,"character":17}]}],"generateUID":[{"__symbolic":"method"}]}}},"origins":{"D3Container":"./lib/d3-container.service"},"importAs":"common-library"}
