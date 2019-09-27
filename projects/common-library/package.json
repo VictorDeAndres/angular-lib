@@ -1,6 +1,6 @@
 {
-  "name": "common-library",
-  "version": "0.0.1",
+  "name": "@angular-lib/common-library",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.3",
     "@angular/core": "^8.2.3"

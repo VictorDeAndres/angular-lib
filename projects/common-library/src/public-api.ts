@@ -2,4 +2,4 @@
  * Public API Surface of common-library
  */
 
-export * from './lib/d3-container.service';
+export * from './lib/wrapper-component-d3.service';
