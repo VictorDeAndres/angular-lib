@@ -44,6 +44,21 @@ Create a new svg element to binding angular-lib d3 components and created data v
 >
 > Return a string with unique id to identificate the created element.
 
+#### width()
+---
+> **Parameters:** None
+>
+> **Return:** Number. 
+>
+> Return the width of the element
+
+#### height()
+---
+> **Parameters:** None
+>
+> **Return:** Number.
+>
+> Return the width of the element
 
 ##### Usage:
 
