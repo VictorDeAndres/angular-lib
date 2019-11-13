@@ -1,9 +1,20 @@
 {
-  "name": "@angular-lib/common-library",
-  "version": "0.0.1",
+  "name": "@ng-library/common-library",
+  "version": "0.0.3",
+  "description": "Common libraries for @angular-lib projects.",
   "peerDependencies": {
     "@angular/common": "^8.2.3",
     "@angular/core": "^8.2.3",
     "d3": "^5.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorDeAndres/angular-lib/tree/common_libraries"
+  },
+  "author": "Victor de Andres",
+  "license": "GNU 2",
+  "bugs": {
+    "url": "https://github.com/VictorDeAndres/angular-lib/issues"
+  },
+  "homepage": "https://github.com/VictorDeAndres/angular-lib/tree/common_libraries#readme"
 }

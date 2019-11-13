@@ -1,6 +1,6 @@
 
 
-# @Angular-lib/Common Library
+# @ng-library/Common Library
 Common libraries for @angular-lib projects.
 
 
@@ -17,7 +17,7 @@ Common libraries for @angular-lib projects.
 Install @angular-lib as a development dependency:
 
 ```bash
-npm install @angular-lib/common-library --save-dependencies
+npm i @ng-library/common-library --save-dependencies
 ```
 	
 
