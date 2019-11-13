@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VictorDeAndres/angular-lib/tree/common_libraries"
+    "url": "git+https://github.com/VictorDeAndres/angular-lib/tree/common_libraries/projects/common-library"
   },
   "author": "Victor de Andres",
   "license": "GNU 2",
   "bugs": {
     "url": "https://github.com/VictorDeAndres/angular-lib/issues"
   },
-  "homepage": "https://github.com/VictorDeAndres/angular-lib/tree/common_libraries#readme"
+  "homepage": "https://github.com/VictorDeAndres/angular-lib/blob/common_libraries/projects/common-library/README.md"
 }
