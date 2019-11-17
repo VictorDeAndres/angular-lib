@@ -17,10 +17,19 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "circular-graphs": [
+        "dist/circular-graphs"
+      ],
+      "circular-graphs/*": [
+        "dist/circular-graphs/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
 }
+

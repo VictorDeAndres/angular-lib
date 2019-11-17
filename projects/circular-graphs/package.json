@@ -1,0 +1,22 @@
+{
+  "name": "@ng-library/circular-graphs",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.13",
+    "@angular/core": "^8.2.13"
+  },
+  "dependencies": {
+    "@ng-library/common-library": "0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorDeAndres/angular-lib/tree/circular-grahps/projects/circular-grahps"
+  },
+  "author": "Victor de Andres",
+  "license": "GNU 2",
+  "bugs": {
+    "url": "https://github.com/VictorDeAndres/angular-lib/issues"
+  },
+  "homepage": "https://github.com/VictorDeAndres/angular-lib/blob/circular-grahps/projects/circular-grahps/README.md"
+}
+
