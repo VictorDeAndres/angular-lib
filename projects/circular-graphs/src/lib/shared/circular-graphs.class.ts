@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 
 import { CircularGraph } from './iCircular-graphs';
 
-export class CircularGraphs {
+export abstract class CircularGraphs {
 
   constructor() { }
 
