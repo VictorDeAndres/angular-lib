@@ -4,7 +4,6 @@ import { Input } from '@angular/core';
 
 import * as d3 from 'd3';
 import { WrapperComponentD3} from '@ng-library/common-library';
-// import { Colors } from './../../../../common-library/src/lib/colors.service';
 
 import { CircularMeasuresService } from '../shared/circular-measures.service';
 import { DoughnutGraph } from './doughnut.class';
@@ -14,8 +13,7 @@ import { DoughnutGraph } from './doughnut.class';
   template: ``,
   styles: [],
   providers: [
-    CircularMeasuresService,
-    // Colors
+    CircularMeasuresService
   ]
 })
 export class DoughnutComponent extends DoughnutGraph implements OnChanges  {
@@ -24,8 +22,7 @@ export class DoughnutComponent extends DoughnutGraph implements OnChanges  {
 
   constructor(
     public elementRef: ElementRef,
-    private circularMeasuresService: CircularMeasuresService,
-    // private colors: Colors
+    private circularMeasuresService: CircularMeasuresService
   ) {
     super();
   }
@@ -43,6 +40,8 @@ export class DoughnutComponent extends DoughnutGraph implements OnChanges  {
     this.minSize = this.circularMeasuresService.calcMinSize(this.graphElement.width, this.graphElement.height);
     this.segmentsDegree = this.scaleData(this.graphData.values).map( value => this.circularMeasuresService.arcValue(value) );
 
+
+    this.graphData.colors = this.checkGraphElementColors();
 
     this.segmentsDegree.map( (arc, idx) => {
       const startAngle = idx === 0

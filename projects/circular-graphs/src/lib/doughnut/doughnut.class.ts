@@ -3,7 +3,7 @@ import { Input } from '@angular/core';
 import * as d3 from 'd3';
 import { Doughnut } from './iDoughnut';
 import { CircularGraphs } from '../shared/circular-graphs.class';
-import { CircularMeasuresService } from '../shared/circular-measures.service';
+import { Colors } from '@ng-library/common-library';
 
 export abstract class DoughnutGraph extends CircularGraphs {
 
@@ -13,8 +13,7 @@ export abstract class DoughnutGraph extends CircularGraphs {
   protected minSize: number;
   protected segmentsDegree: Array<number>;
 
-  constructor(
-  ) {
+  constructor() {
     super();
   }
 
@@ -37,6 +36,19 @@ export abstract class DoughnutGraph extends CircularGraphs {
 
     return data.map( value => interValue(value));
   }
+
+
+
+
+  checkGraphElementColors() {
+    const colors = new Colors();
+    return this.graphData.colors
+      ? this.graphData.colors
+      : colors.generateRandomPallete(this.graphData.values.length);
+  }
+
+
+
 
   /**
    * drawSegment
