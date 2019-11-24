@@ -1,6 +1,6 @@
 {
   "name": "@ng-library/circular-graphs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^8.2.13",
     "@angular/core": "^8.2.13"
@@ -17,6 +17,17 @@
   "bugs": {
     "url": "https://github.com/VictorDeAndres/angular-lib/issues"
   },
-  "homepage": "https://github.com/VictorDeAndres/angular-lib/blob/circular-graphs/projects/circular-graphs/README.md"
+  "homepage": "https://github.com/VictorDeAndres/angular-lib/blob/circular-graphs/projects/circular-graphs/README.md",
+  "keywords": [
+    "angular",
+    "library",
+    "d3",
+    "chart",
+    "charts",
+    "circular",
+    "circular graphs",
+    "progress bar",
+    "doughnut"
+  ]
 }
 
