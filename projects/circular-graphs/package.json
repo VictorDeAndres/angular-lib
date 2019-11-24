@@ -6,7 +6,7 @@
     "@angular/core": "^8.2.13"
   },
   "dependencies": {
-    "@ng-library/common-library": "0.0.3"
+    "@ng-library/common-library": "0.0.4"
   },
   "repository": {
     "type": "git",

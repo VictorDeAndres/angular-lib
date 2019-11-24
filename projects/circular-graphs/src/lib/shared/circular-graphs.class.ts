@@ -1,8 +1,10 @@
 import * as d3 from 'd3';
 
 import { CircularGraph } from './iCircular-graphs';
-
+import { CircularMeasuresService } from './circular-measures.service';
 export abstract class CircularGraphs {
+
+  private circularMeasures = new CircularMeasuresService();
 
   constructor() { }
 
@@ -18,8 +20,8 @@ export abstract class CircularGraphs {
     const circle = d3.arc()
       .innerRadius(data.radius * 3 / 5)
       .outerRadius(data.radius)
-      .startAngle(data.startAngle * Math.PI )
-      .endAngle(data.endAngle); // just radians
+      .startAngle(this.circularMeasures.toRadians(data.startAngle))
+      .endAngle(this.circularMeasures.toRadians(data.endAngle));
 
     graphElement.svgContainer
       .append('g')

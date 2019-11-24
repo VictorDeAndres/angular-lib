@@ -25,8 +25,8 @@ export abstract class ProgressBarGraph extends CircularGraphs {
   foregroundCircle(): void {
     const currenData = {
       radius: this.minSize / 2,
-      startAngle: 2,
-      endAngle: 0,
+      startAngle: 0,
+      endAngle: 360,
       color: this.graphData.color || '#fc4c02',
       opacity: 0.2
     };
@@ -44,8 +44,8 @@ export abstract class ProgressBarGraph extends CircularGraphs {
   progressBar(): void {
     const currenData = {
       radius: this.minSize / 2,
-      startAngle: this.valueDegree / 180,
-      endAngle: 0,
+      startAngle: 0,
+      endAngle: this.valueDegree,
       color: this.graphData.color || '#fc4c02',
     };
 

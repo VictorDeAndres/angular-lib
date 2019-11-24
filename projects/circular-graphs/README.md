@@ -5,14 +5,23 @@ Set of circular graphs for angular.
 
 - Radial Progress Bar graph
 
+![](./images/ProgressBar.png?raw=true) ![](./images/ProgressBar_withText.png?raw=true)
+
+- Doughnut graph
+
+![](./images/Doughnut.png?raw=true)
 
 ## Table of Contents
 
 - [Installation](##Installation)
 - [Documentation](###Documentation)
     - [Radial Progress Bar](###Radial-progress-bar)
-    - [Params](###Params)
-    - [Usage](###Usage)
+        - [Params](###Params)
+        - [Usage](###Usage)
+    - [Doughnut](###Doughnt)
+        - [Params](###Params)
+        - [Usage](###Usage)
+
 - [License](##License)
 
 
@@ -78,6 +87,56 @@ ngOnInit() {
 ></ngl-radial-progress-bar>
 ```
 
+### Doughnt
+
+##### Params
+
+param       | type          | description
+------------|---------------|----------------------------------------------------
+values      | array<int>    | Array of values to represent
+colors?     | array<string> | Color of segments of doughnt. If there isn't colors are applied random colors
+
+
+
+##### Usage:
+
+```javascript
+
+@ app.module.ts
+
+...
+import { DoughnutModule } from '@angular-lib/circular-graphs'; 
+...
+
+@NgModule({
+    ...
+    imports: [
+        ...
+        DoughnutModule
+    ],
+    ...
+})
+```
+```javascript
+@ file.component.ts
+
+...
+ngOnInit() {
+    this.DoughnutData = {
+        values: [32, 24, 21, 46],
+        colors: ['red', 'blue', 'yellow', 'green']
+    };
+}
+...
+```
+```javascript
+@ file.html
+
+<ngl-doughnut
+    style="width: 200px; height: 100px; display: block;"
+    [graphData]="DoughnutData"
+></nngl-doughnut>
+```
 
 
 ## License

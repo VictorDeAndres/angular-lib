@@ -39,4 +39,19 @@ export class CircularMeasuresService {
     return interValue(value);
   }
 
+
+
+
+  /**
+   * toRadians
+   *
+   * Convert degrees values in radians
+   *
+   * @param degree value of degree
+   * @returns number
+   */
+  toRadians(degree: number): number {
+    return degree * Math.PI / 180;
+  }
+
 }

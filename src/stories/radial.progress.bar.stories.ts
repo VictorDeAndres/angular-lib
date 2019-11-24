@@ -22,7 +22,7 @@ storiesOf('Circular Graphs/Radial Progress Bar', module)
   .add('with out text', () => {
     return {
       template: `<ngl-radial-progress-bar
-        style="width: 200px; height: 100px; display: block;"
+        style="width: 300px; height: 200px; display: block;"
         [graphData]="RadialProgressData"></ngl-radial-progress-bar>`,
       props: {
         RadialProgressData
@@ -37,7 +37,7 @@ storiesOf('Circular Graphs/Radial Progress Bar', module)
   .add('with text', () => {
     return {
       template: `<ngl-radial-progress-bar
-        style="width: 200px; height: 100px; display: block;"
+        style="width: 300px; height: 200px; display: block;"
         [graphData]="RadialProgressDataText"></ngl-radial-progress-bar>`,
       props: {
         RadialProgressDataText
