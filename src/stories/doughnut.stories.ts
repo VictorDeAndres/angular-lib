@@ -4,7 +4,8 @@ import { DoughnutComponent } from '../../projects/circular-graphs/src/lib/doughn
 
 export const DoughnutData = {
   values: [32, 24, 21, 46],
-  colors: ['red', 'blue', 'yellow', 'green']
+  colors: ['red', 'blue', 'yellow', 'green'],
+  padding: true
 };
 
 export const DoughnutDataRandomColors = {

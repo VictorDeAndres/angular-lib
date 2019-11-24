@@ -4,4 +4,5 @@ export interface CircularGraph {
   endAngle: number;
   color: string;
   opacity?: number;
+  padding: boolean;
 }

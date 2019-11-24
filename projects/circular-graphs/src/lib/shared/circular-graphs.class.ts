@@ -21,7 +21,8 @@ export abstract class CircularGraphs {
       .innerRadius(data.radius * 3 / 5)
       .outerRadius(data.radius)
       .startAngle(this.circularMeasures.toRadians(data.startAngle))
-      .endAngle(this.circularMeasures.toRadians(data.endAngle));
+      .endAngle(this.circularMeasures.toRadians(data.endAngle))
+      .padAngle(() => data.padding ? 0.03 : 0);
 
     graphElement.svgContainer
       .append('g')

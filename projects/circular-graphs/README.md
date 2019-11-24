@@ -95,6 +95,7 @@ param       | type          | description
 ------------|---------------|----------------------------------------------------
 values      | array<int>    | Array of values to represent
 colors?     | array<string> | Color of segments of doughnt. If there isn't colors are applied random colors
+padding     | boolean       | Draw padding between doughnut segments
 
 
 

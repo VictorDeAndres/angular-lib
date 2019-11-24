@@ -28,7 +28,8 @@ export abstract class ProgressBarGraph extends CircularGraphs {
       startAngle: 0,
       endAngle: 360,
       color: this.graphData.color || '#fc4c02',
-      opacity: 0.2
+      opacity: 0.2,
+      padding: false
     };
 
     this.drawCircle(currenData, this.graphElement);
@@ -47,6 +48,7 @@ export abstract class ProgressBarGraph extends CircularGraphs {
       startAngle: 0,
       endAngle: this.valueDegree,
       color: this.graphData.color || '#fc4c02',
+      padding: false
     };
 
     this.drawCircle(currenData, this.graphElement);

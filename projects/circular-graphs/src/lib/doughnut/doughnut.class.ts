@@ -69,6 +69,7 @@ export abstract class DoughnutGraph extends CircularGraphs {
       startAngle,
       endAngle,
       color: this.graphData.colors[idx],
+      padding: this.graphData.padding
     };
 
     this.drawCircle(currenData, this.graphElement);
