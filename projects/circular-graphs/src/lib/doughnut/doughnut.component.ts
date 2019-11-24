@@ -41,7 +41,7 @@ export class DoughnutComponent extends DoughnutGraph implements OnChanges  {
     this.segmentsDegree = this.scaleData(this.graphData.values).map( value => this.circularMeasuresService.arcValue(value) );
 
 
-    this.graphData.colors = this.checkGraphElementColors();
+    this.graphData.colors = this.checkGraphDataColors();
 
     this.segmentsDegree.map( (arc, idx) => {
       const startAngle = idx === 0

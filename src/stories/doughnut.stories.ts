@@ -8,7 +8,8 @@ export const DoughnutData = {
 };
 
 export const DoughnutDataRandomColors = {
-  values: [32, 24, 21, 46]
+  values: [32, 24, 21, 46],
+  colors: ['red']
 };
 
 storiesOf('Circular Graphs/Doughnut', module)

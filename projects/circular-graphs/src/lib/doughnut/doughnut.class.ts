@@ -39,11 +39,19 @@ export abstract class DoughnutGraph extends CircularGraphs {
 
 
 
-
-  checkGraphElementColors() {
+  /**
+   * checkGraphDataColors
+   *
+   *
+   * Check if the number of colors is the same in the values. If it is different, it generates a random color palette
+   * @returns Doughnut['colors']
+   */
+  checkGraphDataColors(): Doughnut['colors'] {
     const colors = new Colors();
     return this.graphData.colors
-      ? this.graphData.colors
+      ? this.graphData.colors.length === this.graphData.values.length
+        ? this.graphData.colors
+        : [...this.graphData.colors, ...colors.generateRandomPallete(this.graphData.values.length - this.graphData.colors.length || 0 )]
       : colors.generateRandomPallete(this.graphData.values.length);
   }
 
@@ -60,7 +68,7 @@ export abstract class DoughnutGraph extends CircularGraphs {
       radius: this.minSize / 2,
       startAngle,
       endAngle,
-      color: this.graphData.colors[idx] || '#fc4c02',
+      color: this.graphData.colors[idx],
     };
 
     this.drawCircle(currenData, this.graphElement);
