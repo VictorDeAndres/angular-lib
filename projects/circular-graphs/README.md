@@ -4,12 +4,8 @@
 Set of circular graphs for angular.
 
 - Radial Progress Bar graph
-
-![](./images/ProgressBar.png?raw=true) ![](./images/ProgressBar_withText.png?raw=true)
-
 - Doughnut graph
 
-![](./images/Doughnut.png?raw=true)
 
 ## Table of Contents
 
@@ -37,13 +33,15 @@ npm i @ng-library/circular-graphs --save
 
 ### Radial Progress Bar
 
+![](https://ng-library-5a812.firebaseapp.com/images/ProgressBar.png?raw=true) ![](https://ng-library-5a812.firebaseapp.com/images/ProgressBar_withText.png?raw=true)
+
 ##### Params
 
 param       | type     | description
 ------------|----------|----------------------------------------------------
-value       | int      | Value of progress bar. Must be between 0 and 100
+value       | int      | Value of progress bar. Must be between 0 and 100.
 color ?     | string   | Color of progress bar.
-showValue ? | string   | Show the value in percentaje in center of progress bar
+showValue ? | string   | Show the value in percentaje in center of progress bar.
 
 
 ##### Usage:
@@ -89,13 +87,19 @@ ngOnInit() {
 
 ### Doughnt
 
+![](https://ng-library-5a812.firebaseapp.com/images/Doughnut.png?raw=true) ![](https://ng-library-5a812.firebaseapp.com/images/Doughnut_external_label.png?raw=true) ![](https://ng-library-5a812.firebaseapp.com/images/Doughnut_internal_label.png?raw=true)
+
+
 ##### Params
 
-param       | type          | description
-------------|---------------|----------------------------------------------------
-values      | array<int>    | Array of values to represent
-colors?     | array<string> | Color of segments of doughnt. If there isn't colors are applied random colors
-padding     | boolean       | Draw padding between doughnut segments
+param           | type          | description
+----------------|---------------|----------------------------------------------------
+values          | array<int>    | Array of values to represent.
+colors?         | array<string> | Color of segments of doughnt. If there isn't colors are applied random colors.
+padding         | boolean       | Draw padding between doughnut segments.
+labels          | object        | 
+labels.position | string        | Set the position of labels. Allowed values are 'internal' or 'external'.
+labels.titles   | array<string> | Array of titles of labels
 
 
 
