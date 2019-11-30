@@ -24,6 +24,7 @@ export abstract class ProgressBarGraph extends CircularGraphs {
    */
   foregroundCircle(): void {
     const currenData = {
+      id: `${this.graphElement.uid}__foreground`,
       radius: this.minSize / 2,
       startAngle: 0,
       endAngle: 360,
@@ -44,6 +45,7 @@ export abstract class ProgressBarGraph extends CircularGraphs {
    */
   progressBar(): void {
     const currenData = {
+      id: `${this.graphElement.uid}__progress`,
       radius: this.minSize / 2,
       startAngle: 0,
       endAngle: this.valueDegree,
@@ -69,7 +71,7 @@ export abstract class ProgressBarGraph extends CircularGraphs {
       .attr('font-size', `${this.minSize / 5}px`)
       .attr('font-family', 'Arial')
       .attr('font-weight', '800')
-      .style('fill', this.graphData.color || 'red')
+      .style('fill', this.graphData.color || '#fc4c02')
       .text(`${this.graphData.value.toFixed(0)}%`);
 
     // Size of text element.

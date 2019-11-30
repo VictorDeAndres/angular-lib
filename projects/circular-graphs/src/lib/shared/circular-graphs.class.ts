@@ -13,7 +13,7 @@ export abstract class CircularGraphs {
    *
    * Draw Circle
    */
-  drawCircle(data: CircularGraph, graphElement ): void {
+  drawCircle(data: CircularGraph, graphElement ): any {
 
     data = this.defaultValues(data);
 
@@ -28,11 +28,13 @@ export abstract class CircularGraphs {
       .append('g')
         // Center of wrapper
         .attr('transform', `translate(${graphElement.width / 2}, ${graphElement.height / 2})`)
-        .attr('id', 'centerRadiusGraph')
+        .attr('id', data.id)
           .append('path')
           .attr('fill', data.color)
           .style('opacity', data.opacity)
           .attr('d', circle);
+
+    return circle;
   }
 
   private defaultValues(data: CircularGraph) {

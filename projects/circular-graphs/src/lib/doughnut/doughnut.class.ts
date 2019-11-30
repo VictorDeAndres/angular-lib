@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import { Doughnut } from './iDoughnut';
 import { CircularGraphs } from '../shared/circular-graphs.class';
 import { Colors } from '@ng-library/common-library';
+import { CircularGraph } from './../shared/iCircular-graphs';
 
 export abstract class DoughnutGraph extends CircularGraphs {
 
@@ -62,9 +63,13 @@ export abstract class DoughnutGraph extends CircularGraphs {
    * drawSegment
    *
    * Draw circular segment
+   * @param startAngle start angle of arc
+   * @param endAngle end angle of arc
+   * @param idx index of arc
    */
   drawSegment(startAngle: number, endAngle: number, idx: number): void {
     const currenData = {
+      id: `${this.graphElement.uid}__${idx}`,
       radius: this.minSize / 2,
       startAngle,
       endAngle,
@@ -72,34 +77,114 @@ export abstract class DoughnutGraph extends CircularGraphs {
       padding: this.graphData.padding
     };
 
-    this.drawCircle(currenData, this.graphElement);
+    const arc = this.drawCircle(currenData, this.graphElement);
+
+    if ( this.graphData.labels && this.graphData.labels.position === 'internal') {
+      this.appendIntLabels(`${this.graphElement.uid}__${idx}`, arc.centroid(), idx);
+    }
+
+    if ( this.graphData.labels && this.graphData.labels.position === 'external') {
+      this.appendExtLabels(currenData, `${this.graphElement.uid}__${idx}`, arc.centroid(), idx);
+    }
   }
 
 
 
 
   /**
-   * _appendText
+   * appendExtLabels
    *
-   * Append the value of percentage in center of circle.
+   * Append external labels
+   * @param arcId arc id
+   * @param centro center of arc
+   * @param idx index of arc
    */
-  appendText(): void {
+  appendIntLabels(arcId: string, centro: Array<number>, idx: number): void {
 
-    // const textGraph = this.graphElement.svgContainer
-    //   .append('text')
-    //   .attr('font-size', `${this.minSize / 5}px`)
-    //   .attr('font-family', 'Arial')
-    //   .attr('font-weight', '800')
-    //   .style('fill', this.graphData.color || 'red')
-    //   .text(`${this.graphData.value.toFixed(0)}%`);
-
-    // // Size of text element.
-    // const heightText = textGraph.node().getBoundingClientRect().height;
-    // const widthText = textGraph.node().getBoundingClientRect().width;
-
-    // // Move text to center
-    // textGraph
-    //   .attr('x', ( this.graphElement.width / 2 ) - ( widthText / 2))
-    //   .attr('y', ( this.graphElement.height / 2 ) + ( heightText / 4));
+    this.graphElement.svgContainer
+      .select(`#${arcId}`)
+        .append('text')
+        .attr('x', centro[0])
+        .attr('y', centro[1])
+        .attr('dy', '0.33em')
+        .attr('dx', '-0.33em')
+        .style('fill', 'white')
+        .text(this.graphData.labels.titles[idx]);
   }
+
+
+
+
+  /**
+   * appendExtLabels
+   *
+   * Append external labels
+   * @param arcId arc id
+   * @param centro center of arc
+   * @param idx index of arc
+   */
+  appendExtLabels(data: CircularGraph, arcId: string, centro: Array<number>, idx: number): void {
+
+
+
+    /**
+     * calculateExternalPos
+     *
+     * Calculate the position of external pos to draw diagonal line.
+     * @param  dataArc data of arc
+     * @returns Array
+     */
+    function calculateEdgePos(dataArc: CircularGraph): Array<number> {
+      const edgeCircle = d3.arc()
+        .innerRadius(dataArc.radius)
+        .outerRadius(dataArc.radius)
+        .startAngle(this.circularMeasures.toRadians(dataArc.startAngle))
+        .endAngle(this.circularMeasures.toRadians(dataArc.endAngle));
+
+      return edgeCircle.centroid();
+    }
+
+    /**
+     * calculateExternalPos
+     *
+     * Calculate the position of external pos to draw diagonal line.
+     * @param  dataArc data of arc
+     * @returns Array
+     */
+    function calculateExternalPos(dataArc: CircularGraph): Array<number> {
+      const extCircle = d3.arc()
+        .innerRadius(dataArc.radius)
+        .outerRadius(dataArc.radius + 20)
+        .startAngle(this.circularMeasures.toRadians(dataArc.startAngle))
+        .endAngle(this.circularMeasures.toRadians(dataArc.endAngle));
+
+      return extCircle.centroid();
+    }
+
+    const edgeCentro = calculateEdgePos.call(this, data);
+    const extCentro = calculateExternalPos.call(this, data);
+
+    const paddingHorizontalLabel = extCentro[0] >= 0 ? extCentro[0] + 4 : extCentro[0] - 4;
+    const paddingVerticalLabel = extCentro[1] + 4;
+
+    // Draw line
+    this.graphElement.svgContainer
+      .select(`#${arcId}`)
+        .append('line')
+        .style('stroke', 'black')
+        .style('opacity', .7)
+        .attr('x1', edgeCentro[0])
+        .attr('y1', edgeCentro[1])
+        .attr('x2', extCentro[0])
+        .attr('y2', extCentro[1]);
+
+
+    this.graphElement.svgContainer
+      .select(`#${arcId}`)
+        .append('text')
+        .attr('text-anchor', () => extCentro[0] > 0 ? 'start' : 'end')
+        .attr('transform', `translate(${paddingHorizontalLabel}, ${paddingVerticalLabel})`)
+        .text(this.graphData.labels.titles[idx]);
+  }
+
 }

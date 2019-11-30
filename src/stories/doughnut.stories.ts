@@ -1,6 +1,7 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 
 import { DoughnutComponent } from '../../projects/circular-graphs/src/lib/doughnut/doughnut.component';
+import './style.css';
 
 export const DoughnutData = {
   values: [32, 24, 21, 46],
@@ -11,6 +12,24 @@ export const DoughnutData = {
 export const DoughnutDataRandomColors = {
   values: [32, 24, 21, 46],
   colors: ['red']
+};
+
+export const DoughnutDataInternalLabel = {
+  values: [32, 24, 21, 46],
+  colors: ['#F2CB05', '#426AF4', '#BF1797', '#ABBF17'],
+  labels: {
+    position: 'internal',
+    titles: ['A', 'B', 'C', 'D']
+  }
+};
+
+export const DoughnutDataExternalLabel = {
+  values: [32, 24, 21, 46],
+  colors: ['#F2CB05', '#426AF4', '#BF1797', '#ABBF17'],
+  labels: {
+    position: 'external',
+    titles: ['Alfa', 'Bravo', 'Charlie', 'Delta']
+  }
 };
 
 storiesOf('Circular Graphs/Doughnut', module)
@@ -48,6 +67,36 @@ storiesOf('Circular Graphs/Doughnut', module)
     notes: {
       // markdown: readme
     }
-  });
+  })
+
+  .add('internal label', () => {
+    return {
+      template: `<ngl-doughnut
+        style="width: 300px; height: 200px; display: block;"
+        [graphData]="DoughnutDataInternalLabel"></ngl-doughnut>`,
+      props: {
+        DoughnutDataInternalLabel
+      },
+    };
+  }, {
+    notes: {
+      // markdown: readme
+    }
+  })
+
+  .add('external label', () => {
+    return {
+      template: `<ngl-doughnut
+        style="width: 300px; height: 200px; display: block;"
+        [graphData]="DoughnutDataExternalLabel"></ngl-doughnut>`,
+      props: {
+        DoughnutDataExternalLabel
+      },
+    };
+  }, {
+    notes: {
+      // markdown: readme
+    }
+  });;
 
 

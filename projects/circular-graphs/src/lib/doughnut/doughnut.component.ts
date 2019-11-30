@@ -38,6 +38,10 @@ export class DoughnutComponent extends DoughnutGraph implements OnChanges  {
     this.currentElementId = this.graphElement.uid;
 
     this.minSize = this.circularMeasuresService.calcMinSize(this.graphElement.width, this.graphElement.height);
+    // If graph has labels and the position of if are extenal reduce radius in 20 points.
+    this.minSize = this.graphData.labels && this.graphData.labels.position === 'external'
+      ? this.minSize - 20
+      : this.minSize;
     this.segmentsDegree = this.scaleData(this.graphData.values).map( value => this.circularMeasuresService.arcValue(value) );
 
 

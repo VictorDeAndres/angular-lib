@@ -2,6 +2,9 @@ import { storiesOf, moduleMetadata } from '@storybook/angular';
 
 import { RadialProgressBarComponent } from '../../projects/circular-graphs/src/lib/progress-bar/radial-progress-bar.component';
 
+import './style.css';
+
+
 export const RadialProgressData = {
   value: 55,
   color: 'blue'
